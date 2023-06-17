@@ -13,14 +13,14 @@ func main() {
 	// Ask user to enter name, use os.Stdin instead of Scan() to accommodate whitespaces
 	fmt.Print("Enter a name: ")
 	scanner := bufio.NewScanner(os.Stdin)
-    	scanner.Scan()
-    	name = scanner.Text()
+    scanner.Scan()
+    name = scanner.Text()
 
 	// Ask user to enter address, use os.Stdin instead of Scan() to accommodate whitespaces
 	fmt.Print("Enter an address: ")
 	scanner = bufio.NewScanner(os.Stdin)
-    	scanner.Scan()
-    	address = scanner.Text()
+    scanner.Scan()
+    address = scanner.Text()
 
 	// Create a map from the input data
 	data := map[string]string{
