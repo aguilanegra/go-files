@@ -1,0 +1,8 @@
+There is a potential race condition between the printNumbers and generateNumbers goroutines. The race condition occurs due to the concurrent access and modification of the standard output (fmt.Printf) from both goroutines without any synchronization mechanism.
+
+Here's a breakdown of the potential race condition:
+
+1. The main goroutine starts two goroutines with go printNumbers(&wg) and go generateNumbers(3, &wg), which run the printNumbers and generateNumbers functions concurrently.
+2. Both goroutines execute simultaneously and access the standard output (fmt.Printf) to print their respective messages.
+3. As the goroutines run concurrently, the order of execution is non-deterministic, meaning that the output order of the messages can vary between different program executions.
+4. The race condition can occur when the messages from both goroutines overlap or interleave, resulting in an unexpected and unpredictable order of the printed numbers.
